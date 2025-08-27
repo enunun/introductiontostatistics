@@ -1,0 +1,9 @@
+services:
+  typst:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/home/
+    tty: true
+    stdin_open: true

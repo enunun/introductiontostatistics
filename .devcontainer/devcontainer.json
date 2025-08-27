@@ -1,0 +1,19 @@
+{
+  "name": "typst-dev",
+  "dockerComposeFile": "./docker-compose.yml",
+  "workspaceFolder": "/home/",
+  "service": "typst",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "myriad-dreamin.tinymist",
+      ],
+      "settings": {
+        "tinymist.formatterMode": "typstyle",
+        "files.associations": {
+          "*.typ": "typst"
+        }
+      }
+    }
+  }
+}
