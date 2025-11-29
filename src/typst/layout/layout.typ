@@ -1,5 +1,6 @@
 // 『統計学は最強の学問ではない』用typstレイアウトファイル
 #import "@preview/hydra:0.6.2": *
+#import "@preview/cjk-spacer:0.1.0": cjk-spacer
 
 #let Fonts = (
   main: ("XITS", "Noto Serif CJK JP"),
@@ -25,6 +26,7 @@
 }
 
 #let init = body => {
+  show: cjk-spacer
   set page(
     paper: "a5",
     flipped: false,
@@ -54,7 +56,7 @@
   set outline(indent: 0em)
 
   show outline.entry: it => context {
-    let matter = if it.element.body == [目次] {
+    let matter = if it.element.body == [目次] or it.element.body == [はじめに] {
       "front-matter"
     } else if it.element.body == [参考文献] or it.element.body == [索引] {
       "back-matter"
@@ -62,7 +64,15 @@
       "body-matter"
     }
 
-    let label = heading-label(level: it.level, counter-label: it.prefix(), matter-state: matter)
+    let counter-label = if matter == "front-matter" or matter == "back-matter" {
+      ""
+    } else if matter == "appendix" {
+      it.prefix()
+    } else {
+      it.prefix()
+    }
+
+    let label = heading-label(level: it.level, counter-label: counter-label, matter-state: matter)
     link(
       it.element.location(),
       it.indented(label, it.inner()),
@@ -76,14 +86,6 @@
     it
   }
   set outline.entry(fill: repeat([.], gap: .4em))
-
-  // 和文と数式の間に強制的に四分空きを挿入させるため，数式の前後に不可視文字を挟む
-  show math.equation.where(block: false): it => {
-    let ghost = text(font: "Adobe Blank", "\u{375}")
-    ghost
-    it
-    ghost
-  }
 
   set math.equation(
     numbering: num => numbering("(1.1)", counter(heading).get().first(), num),
