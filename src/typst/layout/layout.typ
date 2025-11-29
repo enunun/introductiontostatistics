@@ -3,13 +3,30 @@
 #import "@preview/cjk-spacer:0.1.0": cjk-spacer
 
 #let Fonts = (
-  main: ("XITS", "Noto Serif CJK JP"),
-  sans: ("Fira Sans", "Noto Sans CJK JP"),
-  mono: ("Fira Mono", "Noto Sans Mono CJK JP"),
-  math: "XITS Math",
+  main: "Libertinus Serif",
+  main-ja: "Noto Serif CJK JP",
+  sans: "Libertinus Sans",
+  sans-ja: "Noto Sans CJK JP",
+  mono: "Libertinus Mono",
+  mono-ja: "Noto Sans Mono CJK JP",
+  math: "Libertinus Math",
+  math-bb: "TeX Gyre Pagella Math",
 )
 
+// 集合の表記
+#let Set-Symbol(body) = {
+  text(font: (Fonts.math-bb))[#body]
+}
 
+#let Natural-Numbers() = Set-Symbol("ℕ")
+#let Integers() = Set-Symbol("ℤ")
+#let Rational-Numbers() = Set-Symbol("ℚ")
+#let Real-Numbers() = Set-Symbol("ℝ")
+#let Complex-Numbers() = Set-Symbol("ℂ")
+
+
+
+#let text-size = 11pt
 
 // 見出しラベル用汎用関数
 #let heading-label(level: int, counter-label: str, matter-state: str) = {
@@ -41,12 +58,11 @@
     numbering: none,
   )
 
+  set text(font: (Fonts.main, Fonts.main-ja))
   set text(
-    size: 11pt,
+    size: text-size,
     lang: "ja",
-    font: Fonts.main,
   )
-  // 段落設定
   set par(
     leading: .8em,
     justify: true,
@@ -81,7 +97,7 @@
   }
 
   show outline.entry.where(level: 1): it => {
-    set text(weight: "regular", font: Fonts.sans, size: 12pt)
+    set text(weight: "regular", font: (Fonts.sans, Fonts.sans-ja), size: 12pt)
     set block(above: 1.5em)
     it
   }
@@ -94,7 +110,7 @@
   set figure(
     numbering: num => numbering("1.1", counter(heading).get().first(), num),
   )
-  show math.equation: set text(font: Fonts.math)
+  show math.equation: set text(font: Fonts.math, size: text-size)
   body
 }
 
@@ -161,11 +177,12 @@
     set par(first-line-indent: (amount: 0em, all: true))
     let label = heading-label(level: it.level, counter-label: counter(heading).display(), matter-state: matter)
     let format(contents) = if it.body == [目次] {
-      text(size: size, font: Fonts.sans, weight: weight)[#contents]
+      set text(font: (Fonts.sans, Fonts.sans-ja))
+      text(size: size, weight: weight)[#contents]
     } else {
+      set text(font: (Fonts.sans, Fonts.sans-ja))
       text(
         size: size,
-        font: Fonts.sans,
         weight: weight,
       )[#label#if it.level == 1 { linebreak() } else { " " }#it.body]
     }
@@ -201,7 +218,7 @@
 
 #let section-title(letter, counter) = {
   set align(center + horizon)
-  set text(weight: "regular", font: Fonts.sans, size: 10pt)
+  set text(weight: "regular", font: (Fonts.sans, Fonts.sans-ja), size: 10pt)
   block(above: 1.1em, below: .4em)[#box(baseline: -.06em)[#text(size: 6pt, color.luma(110))[■]]#h(.5em)#letter#h(
       .5em,
     )#box(

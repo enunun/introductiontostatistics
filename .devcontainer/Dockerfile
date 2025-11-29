@@ -7,11 +7,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# XITS Math フォントのインストール
-RUN mkdir -p /usr/share/fonts/opentype/xits \
-    && wget -qO /tmp/XITS-1.302.zip https://github.com/aliftype/xits/releases/download/v1.302/XITS-1.302.zip \
-    && unzip -q /tmp/XITS-1.302.zip -d /usr/share/fonts/opentype/xits \
-    && rm -rf /tmp/XITS-1.302.zip \
+# Libertinus フォントのインストール
+RUN mkdir -p /usr/share/fonts/opentype/libertinus \
+    && wget -qO /tmp/Libertinus-7.051.zip https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.zip \
+    && unzip -q /tmp/Libertinus-7.051.zip -d /usr/share/fonts/opentype/libertinus \
+    && rm -rf /tmp/Libertinus-7.051.zip \
     && fc-cache -fv
 
 # Noto Sans Japanese フォントのインストール
@@ -23,15 +23,6 @@ RUN apt-get update \
 
 # TeX Gyre Pagella フォントのインストール
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fonts-texgyre \
+    && apt-get install -y --no-install-recommends fonts-texgyre fonts-texgyre-math \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Fira Sans/Mono フォントのインストール
-RUN mkdir -p /usr/share/fonts/opentype/fira \
-    && wget -qO /tmp/Fira-master.zip https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip \
-    && unzip -q /tmp/Fira-master.zip -d /tmp/Fira-master \
-    && cp /tmp/Fira-master/Fira-4.202/otf/FiraSans* /usr/share/fonts/opentype/fira/ \
-    && cp /tmp/Fira-master/Fira-4.202/otf/FiraMono* /usr/share/fonts/opentype/fira/ \
-    && rm -rf /tmp/Fira-master.zip /tmp/Fira-master \
-    && fc-cache -fv
