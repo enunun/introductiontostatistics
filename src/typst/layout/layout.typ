@@ -26,7 +26,7 @@
 
 
 
-#let text-size = 11pt
+#let text-size = 12pt
 
 // 見出しラベル用汎用関数
 #let heading-label(level: int, counter-label: str, matter-state: str) = {
@@ -59,14 +59,16 @@
   )
 
   set text(font: (Fonts.main, Fonts.main-ja))
+  show strong: set text(font: (Fonts.sans, Fonts.sans-ja))
   set text(
     size: text-size,
     lang: "ja",
   )
   set par(
-    leading: .8em,
+    leading: .7em,
     justify: true,
     linebreaks: "simple",
+    spacing: .7em,
     first-line-indent: (amount: 1em, all: true),
   )
   set outline(indent: 0em)
