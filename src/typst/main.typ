@@ -14,9 +14,13 @@
 
 #outline()
 
+#include "contents/introduction.typ"
+
 #show: body-matter
 
 = いい感じの章
+
+$RR$
 
 以下の数式を参照：@Eq1
 
@@ -52,7 +56,7 @@ $ E = m c^2 $ <Eq4>
 
 $ E = m c^2 $ <Eq5>
 
-#roremu(900)
+#roremu(200)
 
 = hhhh
 以下の数式を参照：@Eq6
