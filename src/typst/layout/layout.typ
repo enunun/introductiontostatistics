@@ -1,5 +1,9 @@
 // 『統計学は最強の学問ではない』用typstレイアウトファイル
+
+// ページヘッダー制御
 #import "@preview/hydra:0.6.2": *
+
+// 改行時のスペース制御
 #import "@preview/cjk-spacer:0.1.0": cjk-spacer
 
 #let Fonts = (
@@ -23,8 +27,6 @@
 #let Rational-Numbers() = Set-Symbol("ℚ")
 #let Real-Numbers() = Set-Symbol("ℝ")
 #let Complex-Numbers() = Set-Symbol("ℂ")
-
-
 
 #let text-size = 12pt
 
@@ -65,10 +67,10 @@
     lang: "ja",
   )
   set par(
-    leading: .7em,
+    leading: .8em,
     justify: true,
     linebreaks: "simple",
-    spacing: .7em,
+    spacing: .8em,
     first-line-indent: (amount: 1em, all: true),
   )
   set outline(indent: 0em)
@@ -109,9 +111,20 @@
     numbering: num => numbering("(1.1)", counter(heading).get().first(), num),
     number-align: bottom,
   )
+  // インライン数式でのみ分数を横並びにする
+  show math.equation.where(block: false): set math.frac(style: "horizontal")
+
   set figure(
     numbering: num => numbering("1.1", counter(heading).get().first(), num),
   )
+
+  set enum(
+    indent: 1em,
+    body-indent: 0.5em,
+  )
+
+  show figure: set block(above: .5em, below: .5em)
+
   show math.equation: set text(font: Fonts.math, size: text-size)
   body
 }
@@ -231,3 +244,38 @@
     )[■]]]
   line(length: 100%, stroke: (thickness: .6pt))
 }
+
+
+
+// 定理環境
+
+#import "@preview/great-theorems:0.1.2": *
+#import "@preview/rich-counters:0.2.1": *
+
+#let mathcounter = rich-counter(
+  identifier: "mathblocks",
+  inherited_levels: 1,
+)
+
+#let common-math-block = blocktitle => mathblock(
+  blocktitle: blocktitle,
+  counter: mathcounter,
+  inset: (top: .2em, bottom: .2em),
+  titlix: title => [（#title）],
+  bodyfmt: body => [
+    #h(.25em)
+    #body
+  ],
+)
+
+#let theorem = common-math-block("定理")
+
+#let definition = common-math-block("定義")
+
+#let lemma = common-math-block("補題")
+
+#let example = common-math-block("例")
+
+#let remark = common-math-block("注意")
+
+#let proof = proofblock()

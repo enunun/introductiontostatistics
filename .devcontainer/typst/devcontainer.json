@@ -1,6 +1,6 @@
 {
   "name": "typst-dev",
-  "dockerComposeFile": "./docker-compose.yml",
+  "dockerComposeFile": "../docker-compose.yml",
   "workspaceFolder": "/home/",
   "service": "typst",
   "customizations": {

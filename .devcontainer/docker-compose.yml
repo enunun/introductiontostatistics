@@ -4,6 +4,14 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../:/home/
+      - ../src/typst:/home/
+    container_name: typst-devcontainer
     tty: true
+    stdin_open: true
+  julia:
+    image: julia:latest
+    volumes:
+      - ../src/julia:/home/
+    tty: true
+    container_name: julia-devcontainer
     stdin_open: true

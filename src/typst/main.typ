@@ -18,6 +18,8 @@
 
 #show: body-matter
 
+#include "contents/probabiliry.typ"
+
 #show: back-matter
 
 = 索引
