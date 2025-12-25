@@ -119,10 +119,13 @@
   )
 
   set enum(
-    indent: 1em,
+    indent: 1.5em,
     body-indent: 0.5em,
   )
-
+  set list(
+    indent: 1.5em,
+    body-indent: 0.5em,
+  )
   show figure: set block(above: .5em, below: .5em)
 
   show math.equation: set text(font: Fonts.math, size: text-size)
@@ -260,7 +263,7 @@
 #let common-math-block = blocktitle => mathblock(
   blocktitle: blocktitle,
   counter: mathcounter,
-  inset: (top: .2em, bottom: .2em),
+  inset: (top: .5em, bottom: .5em),
   titlix: title => [（#title）],
   bodyfmt: body => [
     #h(.25em)
@@ -268,11 +271,25 @@
   ],
 )
 
+#let common-math-block-unnumbered = blocktitle => mathblock(
+  blocktitle: blocktitle,
+  counter: mathcounter,
+  inset: (top: .5em, bottom: .5em),
+  titlix: title => [（#title）],
+  bodyfmt: body => [
+    #h(.25em)
+    #body
+  ],
+)
+
+
 #let theorem = common-math-block("定理")
 
 #let definition = common-math-block("定義")
 
 #let lemma = common-math-block("補題")
+
+#let answer = common-math-block-unnumbered("解答")
 
 #let example = common-math-block("例")
 
