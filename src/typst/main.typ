@@ -12,15 +12,18 @@
 
 #show: set-layout(matter: "front-matter")
 
+#include "contents/introduction.typ"
+
 #outline()
 
-#include "contents/introduction.typ"
 
 #show: body-matter
 
 #include "contents/probabiliry.typ"
+#include "contents/testing.typ"
 
 #show: back-matter
+
 
 = 索引
 
@@ -37,3 +40,9 @@
   title: "参考文献",
   ..bib-file(read("reference/reference.bib")),
 )
+
+#pagebreak()
+
+#set page(header: context {})
+
+#include "contents/corophon.typ"

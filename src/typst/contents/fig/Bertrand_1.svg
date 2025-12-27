@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="Bertrand_1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.73648495"
+     inkscape:cx="329.94564"
+     inkscape:cy="265.45009"
+     inkscape:window-width="1607"
+     inkscape:window-height="991"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     width="100mm" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.665;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path31"
+       cx="49.865334"
+       cy="52.761913"
+       r="38.316429" />
+    <path
+       sodipodi:type="star"
+       style="fill:none;stroke:#000000;stroke-width:2.51339;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path914"
+       inkscape:flatsided="true"
+       sodipodi:sides="3"
+       sodipodi:cx="253.61163"
+       sodipodi:cy="345.83405"
+       sodipodi:r1="143.47656"
+       sodipodi:r2="71.738281"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 377.86598,417.57233 -248.50869,0 124.25434,-215.21485 z"
+       transform="matrix(0.26090029,0,0,0.26090029,-16.195781,-37.579999)"
+       inkscape:transform-center-y="-9.358273"
+       inkscape:transform-center-x="1.0299986e-06" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 49.971568,15.215125 C 25.083561,82.309407 25.083561,82.309407 25.083561,82.309407"
+       id="path1095" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.529166, 1.05833;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 49.971568,15.215125 C 87.800505,57.337007 87.991135,57.337007 87.991135,57.337007"
+       id="path1097" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="46.434013"
+       y="12.920453"
+       id="text5493"><tspan
+         sodipodi:role="line"
+         id="tspan5491"
+         style="stroke-width:0.264583"
+         x="46.434013"
+         y="12.920453">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="4.8815022"
+       y="76.635597"
+       id="text5493-3"><tspan
+         sodipodi:role="line"
+         id="tspan5491-6"
+         style="stroke-width:0.264583"
+         x="4.8815022"
+         y="76.635597">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="86.694366"
+       y="75.491814"
+       id="text5493-3-7"><tspan
+         sodipodi:role="line"
+         id="tspan5491-6-5"
+         style="stroke-width:0.264583"
+         x="86.694366"
+         y="75.491814">C</tspan></text>
+  </g>
+</svg>

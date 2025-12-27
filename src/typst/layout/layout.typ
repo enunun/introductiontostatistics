@@ -28,7 +28,7 @@
 #let Real-Numbers() = Set-Symbol("ℝ")
 #let Complex-Numbers() = Set-Symbol("ℂ")
 
-#let text-size = 12pt
+#let text-size = 10.5pt
 
 // 見出しラベル用汎用関数
 #let heading-label(level: int, counter-label: str, matter-state: str) = {
@@ -184,6 +184,12 @@
     },
   )
 
+  show figure: set block(inset: .5em)
+  show figure.where(
+    kind: table,
+  ): set figure.caption(position: top)
+  set figure(gap: 0em)
+
   // 見出し設定
   show heading: it => {
     for level in range(it.level + 1, 5) {
@@ -296,3 +302,6 @@
 #let remark = common-math-block("注意")
 
 #let proof = proofblock()
+
+#let bin = math.op("Bin")
+
